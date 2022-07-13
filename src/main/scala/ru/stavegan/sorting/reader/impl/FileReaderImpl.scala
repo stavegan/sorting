@@ -42,13 +42,15 @@ object FileReaderImpl {
   implicit private class RichPath(val value: Path) extends AnyVal {
 
     def toInputStream: IO[IOException, InputStream] =
-      ZIO.attemptBlockingIO {
-        new BufferedInputStream(
-          new FileInputStream(
-            value.toFile
+      ZIO
+        .attempt {
+          new BufferedInputStream(
+            new FileInputStream(
+              value.toFile
+            )
           )
-        )
-      }
+        }
+        .catchAll(cause => ZIO.fail(new IOException(s"Could not access file \"$value\".", cause)))
   }
 
   implicit private class RichInputStream(val value: InputStream) extends AnyVal {

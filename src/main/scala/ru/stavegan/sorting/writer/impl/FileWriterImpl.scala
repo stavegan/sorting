@@ -18,6 +18,6 @@ final class FileWriterImpl extends FileWriter.Service {
             )
           )
         }
-        .catchAll(cause => ZIO.fail(new IOException(s"Could not access directory \"$path\".", cause)))
+        .catchAll(cause => ZIO.fail(new IOException(s"Could not access file \"$path\".", cause)))
     }
 }
