@@ -14,7 +14,7 @@ object FileWriter {
      * Creates output stream from the specified path.
      *
      * @param path
-     *        path to produced file
+     *        path to produced file.
      *
      * @return the resulting {@code OutputStream}.
      *

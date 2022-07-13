@@ -91,9 +91,9 @@
 376
 380
 388
+389
 394
 396
-389one-hundred-forty-five
 eighty-nine
 eighty-one
 eighty-seven
@@ -114,6 +114,7 @@ one
 one-hundred-eighteen
 one-hundred-eighty
 one-hundred-eighty-seven
+one-hundred-forty-five
 one-hundred-forty-seven
 one-hundred-fourteen
 one-hundred-ninety-eight
@@ -140,6 +141,7 @@ seventy-five
 seventy-nine
 seventy-six
 sixty-eight
+sixty-five
 sixty-four
 sixty-one
 sixty-six
@@ -180,17 +182,18 @@ two-hundred-fifty-three
 two-hundred-forty-eight
 two-hundred-forty-four
 two-hundred-forty-three
-two-hundred-forty-twosixty-five
+two-hundred-forty-two
 two-hundred-ninety-six
 two-hundred-seventy-eight
 two-hundred-seventy-five
 two-hundred-seventy-four
 two-hundred-seventy-nine
 two-hundred-seventy-one
+two-hundred-seventy-six
 two-hundred-sixty-eight
 two-hundred-sixty-five
 two-hundred-sixty-one
-two-hundred-sixty-seventwo-hundred-seventy-six
+two-hundred-sixty-seven
 two-hundred-thirty-eight
 two-hundred-twelve
 two-hundred-twenty
