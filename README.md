@@ -5,13 +5,14 @@
 
 #### Explanations:
 * Sorting is ascending.
-* Numbers come before lines. 
+* Numbers come before lines.
 * Strings are sorted lexicographically.
 * Invalid input files are skipped with a message.
 * Invalid lines (containing spaces) are skipped.
+* Asymptotics ```O(n log n)``` (merge sort).
 
 #### Usage:
-* the first ```n - 1``` arguments are the names of the input files to be sorted,
+* the first ```n - 1``` arguments are the names of the input files to be sorted.
 * the last ```n``` argument presents the directory to save the sorting results.
 
 ##### Example:
