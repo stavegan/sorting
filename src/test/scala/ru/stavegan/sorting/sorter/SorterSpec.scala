@@ -1,11 +1,10 @@
-package ru.stavegan.sorting.sorting
+package ru.stavegan.sorting.sorter
 
 import ru.stavegan.sorting.reader.{FileReader, _}
-import ru.stavegan.sorting.sorter.Sorter
 import ru.stavegan.sorting.util._
 import ru.stavegan.sorting.writer.FileWriter
 import zio._
-import zio.test.{Assertion, _}
+import zio.test._
 
 import java.io.IOException
 import java.nio.file.Files
