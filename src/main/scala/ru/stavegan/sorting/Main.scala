@@ -23,11 +23,10 @@ object Main extends ZIOApp {
 
   override def run: ZIO[Environment & ZIOAppArgs & Scope, IOException, ExitCode] =
     for {
-      args <- ZIO.service[ZIOAppArgs]
-      filenames = args.getArgs.dropRight(1)
-      paths <- ZIO.foreach(filenames)(toPathOption)
-      directory <- ZIO.service[ZIOAppArgs].flatMap {
-        case args if args.getArgs.lastOption.nonEmpty => ZIO.succeed(args.getArgs.last)
+      args <- ZIO.service[ZIOAppArgs].map(_.getArgs)
+      paths <- ZIO.foreach(args.dropRight(1))(toPathOption)
+      directory <- args match {
+        case _ :+ directory => ZIO.succeed(directory)
         case _ => ZIO.fail(new IOException("Output directory did not specified."))
       }
       _ <- Sorter.sort(paths.flatten, directory)

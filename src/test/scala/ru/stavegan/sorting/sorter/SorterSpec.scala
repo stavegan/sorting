@@ -43,9 +43,8 @@ object SorterSpec extends ZIOSpecDefault {
           .catchAll(cause => ZIO.fail(new IOException("Could not access the resource \"filename\".", cause)))
       }
       _ <- Sorter.sort(paths.flatten, OutputDirectory)
-      reader <- ZIO.service[FileReader.Service]
       path <- toPath(OutputDirectory, SortedLabel)
-      stream <- reader.inputStream(path)
+      stream <- FileReader.inputStream(Chunk.apply(path))
       iterable = stream.iterator.asScala.toSeq
     } yield iterable
 
@@ -59,8 +58,7 @@ object SorterSpec extends ZIOSpecDefault {
         case Some(path) => ZIO.succeed(path)
         case None => ZIO.fail(new IOException("Could not access the resource \"filename\"."))
       }
-      reader <- ZIO.service[FileReader.Service]
-      stream <- reader.inputStream(path)
+      stream <- FileReader.inputStream(Chunk.apply(path))
       iterable = stream.iterator.asScala.toSeq
     } yield iterable
 

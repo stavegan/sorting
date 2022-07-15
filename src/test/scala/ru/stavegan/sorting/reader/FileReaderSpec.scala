@@ -79,8 +79,7 @@ object FileReaderSpec extends ZIOSpecDefault {
         case Some(path) => ZIO.succeed(path)
         case None => ZIO.fail(new IOException("Could not access the resource \"filename\"."))
       }
-      reader <- ZIO.service[FileReader.Service]
-      stream <- reader.inputStream(path)
+      stream <- FileReader.inputStream(Chunk.apply(path))
       iterable = stream.iterator.asScala.toSeq
     } yield iterable
 
